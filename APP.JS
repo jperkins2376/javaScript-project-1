@@ -1,15 +1,16 @@
-const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
-const btn = document.getElementById("btn");
-const color = document.querySelector(".color");
 
-btn.addEventListener("click", function () {
-    const randomNumber = getRandomNumber();
-    // console.log(randomNumber);
+const body = document.body;
+const pallete = document.getElementById("pallete");
+const pallete2 = document.getElementById("pallete2");
+const pallete3 = document.getElementById("pallete3");
 
-    document.body.style.backgroundColor = colors[randomNumber];
-    color.textContent = colors[randomNumber];
-});
-
-function getRandomNumber() {
-    return Math.floor(Math.random() * colors.length);
+//Random Color
+function randomColor() {
+    let randomize = Math.floor(Math.random() * 16777215).toString(16);
+    let randomize2 = Math.floor(Math.random() * 16777215).toString(16);
+    let randomize3 = Math.floor(Math.random() * 16777215).toString(16);
+    pallete.innerHTML = `#${randomize}`;
+    pallete2.innerHTML = `#${randomize}`;
+    pallete3.innerHTML = `#${randomize}`;
+    body.style.background = `linear-gradient(to right, #${randomize} 0%, #${randomize} 33%, #${randomize2} 33%, #${randomize2} 67%, #${randomize3} 67%, #${randomize3} 100%)`;
 }
